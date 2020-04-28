@@ -1,0 +1,7 @@
+Fix merge_geo_and_data - it is not very general and will cause problems when adding more variables and/or higher precision
+
+Add region-level polygons for countries that has that level of data (China, US, Canada, Australia).
+
+Read the extra data from COVID-19 dataset (e.g population)
+Read the confirmed cases data
+Add selector for which data to make the plot for (e.g Deaths, Deaths/Population, Confirmed etc)
