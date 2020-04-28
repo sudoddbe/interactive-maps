@@ -5,3 +5,5 @@ Add region-level polygons for countries that has that level of data (China, US, 
 Read the extra data from COVID-19 dataset (e.g population)
 Read the confirmed cases data
 Add selector for which data to make the plot for (e.g Deaths, Deaths/Population, Confirmed etc)
+
+Add some kind of Docker (or equivalent) setup to avoid having to install geopandas, bokeh etc on all machines (and it seems fun to learn Docker!)
