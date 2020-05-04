@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+    nginx:
+        image: nginx:1.13.7
+        container_name: nginx
+        depends_on: 
+            - bokeh
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - my-network
+        ports:
+            - 80:80
+
+    bokeh:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        container_name: bokeh 
+        command: bokeh serve covid_map.py --port 5100 --allow-websocket-origin=localhost
+        ports:
+            - 8080:5100
+        networks:
+            my-network:
+                aliases:
+                    - bokeh-app
+
+networks:
+    my-network:
+
